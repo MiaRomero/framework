@@ -22,5 +22,9 @@
   "bugs": {
     "url": "https://github.com/MiaRomero/framework/issues"
   },
-  "homepage": "https://github.com/MiaRomero/framework#readme"
+  "homepage": "https://github.com/MiaRomero/framework#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-util": "^3.0.7"
+  }
 }
