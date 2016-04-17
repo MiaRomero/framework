@@ -1,0 +1,26 @@
+{
+  "name": "framework",
+  "version": "1.0.0",
+  "description": "Our framework",
+  "main": "index.js",
+  "bin": {
+    "framework": "framework.js"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MiaRomero/framework.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MiaRomero/framework/issues"
+  },
+  "homepage": "https://github.com/MiaRomero/framework#readme"
+}
