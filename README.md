@@ -18,7 +18,6 @@ To then use TKO you must require in ('kombucha').
 Router Methods
 <ul>
   <li><a href="#get-request">stc.router.get</a></li>
-  <li><a href="#get-static">stc.router.getStatic</a></li>
   <li><a href="#post-request">stc.router.post</a></li>
   <li><a href="#custom-404">stc.router.custom404</a></li>
 </ul>
@@ -87,7 +86,7 @@ Every 404 you encounter will now respond with 'some custom message here'.
 
 
 ```
-stc.server.listen(5000);
+stc.server.listen(3000);
 
 ```
 
