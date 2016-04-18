@@ -66,7 +66,7 @@ stc.router.post('/yourownurl');
 Here is an example of an optional callback.
 
 ```
-stc.router.post('/postwithcustomcallback', function(request, respnse){
+stc.router.post('/sobubblysosweet', function(request, respnse){
       var totalData = '';
       request.on('data', function(data){
         totalData += data.toString();
@@ -75,8 +75,7 @@ stc.router.post('/postwithcustomcallback', function(request, respnse){
         response.writeHead(200, {"Content-Type": "application/json"});
         response.write(totalData);
         response.end();
-      });
-```
+      });```
 
 <h4><a name="custom-404"></a>Setting up your own customer 404 response:</h4>
 
