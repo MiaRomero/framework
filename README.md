@@ -49,7 +49,22 @@ stc.router.get('/default');
 stc.router.post('/yourownurl');
 ```
 
+
+<h4><a name="post-request"></a>Setting up a route for a POST request:</h4>
+
+<strong>stc.router.post(pathname, [callback])</strong>
+
+1.Pathname: Any valid url character may be used in the form of a string.
+2.Callback[optional]: A callback function with the parameters of request and response. If left black will default to an empty response.
+
+and setting up a route for a POST request is easy if you can use the default callback provided above.  Simply use the following code:
+
+```
+stc.router.post('/yourownurl');
+```
+
 Here is an example of an optional callback.
+
 
 ```
 stc.router.post('/sobubblysosweet', function(request, response){
