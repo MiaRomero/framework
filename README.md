@@ -67,7 +67,7 @@ Here is an example of an optional callback.
 
 
 ```
-<strong>stc.router.post('/sobubblysosweet', function(request, response){
+stc.router.post('/sobubblysosweet', function(request, response){
       var totalData = '';
       request.on('data', function(data){
         totalData += data.toString();
@@ -76,7 +76,7 @@ Here is an example of an optional callback.
         response.writeHead(200, {"Content-Type": "application/json"});
         response.write(totalData);
         response.end();
-      });</strong>
+      });
 ```
 
 <h4><a name="custom-404"></a>Setting up your own customer 404 response:</h4>
