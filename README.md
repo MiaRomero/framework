@@ -110,3 +110,5 @@ Your server is now listen on port 3000.
 readme and other inspiration from Sludgy Trucker Coffee (STC)
 
 ```
+Docs & Dev Dependencies included:
+gulp, eslint, mocha, chai, gulp-mocha, gulp-eslint, chai http, 
