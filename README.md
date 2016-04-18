@@ -65,9 +65,8 @@ stc.router.post('/yourownurl');
 
 Here is an example of an optional callback.
 
-
 ```
-stc.router.post('/sobubblysosweet', function(request, response){
+stc.router.post('/postwithcustomcallback', function(request, respnse){
       var totalData = '';
       request.on('data', function(data){
         totalData += data.toString();
