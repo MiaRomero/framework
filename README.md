@@ -37,7 +37,7 @@ Sets up a basic route on your server that will return the plain/text you give it
 2. Response[optional]: The response you want the server to send and thus be displayed on a browser if you navigate to this route. If you do not include a response it defaults to a placeholder.
 
 ```
-stc.router.get('/soeffervescent', "anybody got a scoby?");
+kombucha.router.get('/soeffervescent', "anybody got a scoby?");
 ```
 
 will print "anybody got a scoby?" when you visit /soeffervescent.
@@ -66,7 +66,7 @@ kombucha.router.post('/yourownurl');
 Here is an example of an optional callback.
 
 
-```kombucha.router.post('/sobubblysosweet', function(request, respnse){
+```kombucha.router.post('/sobubblysosweet', function(request, response){
       var totalData = '';
       request.on('data', function(data){
         totalData += data.toString();
