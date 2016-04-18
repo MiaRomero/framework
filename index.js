@@ -6,3 +6,4 @@ exports.router = require(__dirname + '/lib/server');
 
 server.launch(3000);
 server.getRequest('/soeffervescent', 'default', 'text/plain', 'anybody got a scoby?');
+// server.postRequest('/soeffervescent', 'default', 'application/json', '{ "Kombucha": "yummy!"}');
