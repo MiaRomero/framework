@@ -10,20 +10,26 @@ Installation
 -------------
 ```npm install kombucha```
 
-To then use TKO you must require in ('kombucha').
+To then use kombucha, you must require in ('kombucha').
 
-```var kombucha = require('kombucha')```
+```const kombucha = require('kombucha')```
 
 
 Router Methods
 <ul>
-  <li><a href="#get-request">kombucha.router.get</a></li>
-  <li><a href="#post-request">kombucha.router.post</a></li>
+  <li><a href="#get-request">kombucha..get</a></li>
+  <li><a href="#post-request">kombucha.post</a></li>
   <li><a href="#custom-404">kombucha.router.custom404</a></li>
 </ul>
 Server Methods
 <ul>
-  <li><a href="#listen">kombucha.server.listen</a></li>
+  <li><a href="#listen">kombucha.listen</a></li>
+
+  kombucha.listen(port, ()=>{
+    port = process.env.PORT || 3000;
+    console.log(port);
+    console.log('server is up on the port ' + port);
+  });
 </ul>
 --------------------
 
@@ -37,22 +43,22 @@ Sets up a basic route on your server that will return the plain/text you give it
 2. Response[optional]: The response you want the server to send and thus be displayed on a browser if you navigate to this route. If you do not include a response it defaults to a placeholder.
 
 ```
-kombucha.router.get('/soeffervescent', "anybody got a scoby?");
+kombucha.get('/soeffervescent', "anybody got a scoby?");
 ```
 
 will print "anybody got a scoby?" when you visit /soeffervescent.
 
 ```
-kombucha.router.get('/default');
+kombucha.get('/default');
 ```
 
-kombucha.router.post('/yourownurl');
+kombucha.post('/yourownurl');
 ```
 
 
 <h4><a name="post-request"></a>Setting up a route for a POST request:</h4>
 
-<strong>kombucha.router.post(pathname, [callback])</strong>
+<strong>kombucha.post(pathname, [callback])</strong>
 
 1.Pathname: Any valid url character may be used in the form of a string.
 2.Callback[optional]: A callback function with the parameters of request and response. If left black will default to an empty response.
@@ -60,13 +66,13 @@ kombucha.router.post('/yourownurl');
 and setting up a route for a POST request is easy if you can use the default callback provided above.  Simply use the following code:
 
 ```
-kombucha.router.post('/yourownurl');
+kombucha.post('/yourownurl');
 ```
 
 Here is an example of an optional callback.
 
 
-```kombucha.router.post('/sobubblysosweet', function(request, response){
+```kombucha.post('/sobubblysosweet', function(request, response){
       var totalData = '';
       request.on('data', function(data){
         totalData += data.toString();
@@ -93,13 +99,13 @@ Every 404 you encounter will now respond with 'some custom message here'.
 
 <h4><a name="listen"></a>Starting up your server:</h4>
 
-<strong>kombucha.server.listen([port])</strong>
+<strong>kombucha.listen([port])</strong>
 
 1.Port(optional): You can set what port you want your server to be on. If you provide no arguments it will default to 3000.
 
 
 ```
-kombucha.server.listen(3000);
+kombucha.listen(3000.()=>{console.log('Server is running on 3000')});
 
 ```
 
