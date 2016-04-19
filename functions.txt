@@ -17,20 +17,11 @@ include the extension. Also, do NOT prefix fileName with anything.
 EXAMPLE: readFile('/test','boogy.js',routes)
 3-routes
 this is the router object witch contains the routes for kombatcha.
-the router object must be defined on the same file as the kombatcha
-server call. This is done by doing >>>
- var routes = new Router();
-this gives the ability for the function to be able to interpret the
-routes from the router and understand the type of REST request that
-is being made from the function.
-EXAMPLE >>>
-var 'anything' = new Router();
-and plug the variable name for the new Router object into the routes parameter
-of the function.
-COMPLETE EXAMPLE
+they are contained in an object in another file, so just make this
+parameter equal to: server (no quotes, because it is an object)
+EXAMPLE
 var kombucha =  require('kombucha');
-var routes = new Router();
-kombucha.readFile('/test','boogy.js',routes)
+kombucha.readFile('/test','boogy.js',server)
 OUTPUT
 any data or text from the file 'boogy.js' will be printed to the
 console as well as the browser when a get request is made to
@@ -52,19 +43,11 @@ EXAMPLE
 directoryListAllFiles('/test',routes)
 2-routes
 this is the router object witch contains the routes for kombatcha.
-the router object must be defined on the same file as the kombatcha
-server call. This is done by doing >>>
- var routes = new Router();
-this gives the ability for the function to be able to interpret the
-routes from the router and understand the type of REST request that
-is being made from the function.
-EXAMPLE >>>
-var 'anything' = new Router();
-and plug the variable name for the new Router object into the routes parameter of the function.
-COMPLETE EXAMPLE
+they are contained in an object in another file, so just make this
+parameter equal to: server (no quotes, because it is an object)
+EXAMPLE
 var kombucha =  require('kombucha');
-var routes = new Router();
-directoryListAllFiles('/test',routes)
+kombucha.directoryListAllFiles('/test',server)
 OUTPUT
 a list of files will be listed in the browser at the pathName '/test'a list of the files in the '/test' folder will also be displayed
 in the console.
@@ -82,12 +65,11 @@ this is the path of the directory or folder on the server that you
 wish to save the data too. NOTE: The directory must exist on the server.
 2- routes
 this is the router object witch contains the routes for kombatcha.
-the router object must be defined on the same file as the kombatcha
-server call. This is done by doing >>>
- var routes = new Router();
-this gives the ability for the function to be able to interpret the
-routes from the router and understand the type of REST request that
-is being made from the function.
+they are contained in an object in another file, so just make this
+parameter equal to: server (no quotes, because it is an object)
+EXAMPLE
+var kombucha =  require('kombucha');
+kombucha.postJSONtoFILE('/test',server,'boogy')
 3- fileName
 this is the name that you wish to call the file of which the JSON post
 data will be saved. NOTE: This is optional and if not supplied,
@@ -96,8 +78,7 @@ hour time. NOTE: Do not supply the extension. Just the name of the file.
 The extension is added automatically.
 COMPLETE EXAMPLE
 var kombucha =  require('kombucha');
-var routes = new Router();
-postJSONtoFILE('/test',routes,'oogabooga')
+kombucha.postJSONtoFILE('/test',server,'oogabooga')
 OUTPUT
 Notifies you in the console of the fact that you saved the JSON
 post data to a file.
@@ -112,12 +93,11 @@ If no fileName is supplied, it will get the stats on the pathName
 the path of the file to get the stats(info) of
 2- routes
 this is the router object witch contains the routes for kombatcha.
-the router object must be defined on the same file as the kombatcha
-server call. This is done by doing >>>
- var routes = new Router();
-this gives the ability for the function to be able to interpret the
-routes from the router and understand the type of REST request that
-is being made from the function.
+they are contained in an object in another file, so just make this
+parameter equal to: server (no quotes, because it is an object)
+EXAMPLE
+var kombucha =  require('kombucha');
+kombucha.getFileInfo('/test',server,'oogabooga.js')
 3- fileName
 the name of the file to get info of. NOTE: you must supply
 the extension of the file, IE: .txt, .js, .json, etc.
@@ -125,8 +105,7 @@ Note, fileName is optional, and the function will default to the
 pathName if fileName is not provided by the user
 COMPLETE EXAMPLE
 var kombucha =  require('kombucha');
-var routes = new Router();
-postJSONtoFILE('/test',routes,'NewJerseyistheBEST.js')
+kombucha.getFileInfo('/test',server,'NewJerseyistheBEST.js')
 OUTPUT
 The console will display the stats of the file or directory and
 also notify the user if the file they are reading is in fact a file,
