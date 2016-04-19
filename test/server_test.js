@@ -3,9 +3,14 @@ const chaiHttp = require('chai-http');
 chai.use(chaiHttp);
 const expect = chai.expect;
 const request = chai.request;
-const server = require(__dirname + '/../lib/server');
+const kombucha = require(__dirname + '/../lib/server');
 
 describe('the server', () => {
+  before( () => {
+    kombucha.listen(3000, () => {
+      process.stdout.write('server up');
+    });
+  });
   it('should accept GET requests to /soeffervescent', (done) => {
     request('localhost:3000')
     .get('/soeffervescent')
