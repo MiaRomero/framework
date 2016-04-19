@@ -1,0 +1,133 @@
+functions
+
+readFile(pathName,fileName,routes)
+
+this functions enables the user to read from a file from a directory
+on the server. It is passed 3 parameters. pathName fileName and
+routes.
+1-pathName:
+this is the path of the folder or directory on the server that the
+user wishes to read a file from. pathName must be prefixed with a
+slash(/)
+EXAMPLE: readFile('/test',fileName,routes)
+2-fileName
+this is the actual name of the file the user wishes to read and get
+the data from. The fileName must exist on the server, and also must
+include the extension. Also, do NOT prefix fileName with anything.
+EXAMPLE: readFile('/test','boogy.js',routes)
+3-routes
+this is the router object witch contains the routes for kombatcha.
+the router object must be defined on the same file as the kombatcha
+server call. This is done by doing >>>
+ var routes = new Router();
+this gives the ability for the function to be able to interpret the
+routes from the router and understand the type of REST request that
+is being made from the function.
+EXAMPLE >>>
+var 'anything' = new Router();
+and plug the variable name for the new Router object into the routes parameter
+of the function.
+COMPLETE EXAMPLE
+var kombucha =  require('kombucha');
+var routes = new Router();
+kombucha.readFile('/test','boogy.js',routes)
+OUTPUT
+any data or text from the file 'boogy.js' will be printed to the
+console as well as the browser when a get request is made to
+localhost:'serverport'/pathName ---
+in this example, pathName is /test
+
+directoryListAllFiles(pathName, routes)
+NOTE: To use this function, make a GET request to /listfiles
+
+this function lists all files from within a directory or folder on
+the server. The file list is output onto the console as well as the
+browser when a get request is made to the pathName supplied as the
+first parameter of this function.
+1-pathName
+this is the path of the directory or folder that the user wishes to
+read the list of files from. Also, the pathName must be prefixed
+with a slash(/).
+EXAMPLE
+directoryListAllFiles('/test',routes)
+2-routes
+this is the router object witch contains the routes for kombatcha.
+the router object must be defined on the same file as the kombatcha
+server call. This is done by doing >>>
+ var routes = new Router();
+this gives the ability for the function to be able to interpret the
+routes from the router and understand the type of REST request that
+is being made from the function.
+EXAMPLE >>>
+var 'anything' = new Router();
+and plug the variable name for the new Router object into the routes parameter of the function.
+COMPLETE EXAMPLE
+var kombucha =  require('kombucha');
+var routes = new Router();
+directoryListAllFiles('/test',routes)
+OUTPUT
+a list of files will be listed in the browser at the pathName '/test'a list of the files in the '/test' folder will also be displayed
+in the console.
+
+postJSONtoFILE(pathName, routes, fileName)
+
+this functions takes a POST request and writes it to a file either named
+by the user, or if no name is given, it names the file based on the
+current time in hours minutes and seconds, 24 hour time. This function
+takes 3 parameter. pathName, routes and fileName. Filename can be
+ommitted if user wishes to default to the 24 hour time name supplied by
+the function.
+1- pathName
+this is the path of the directory or folder on the server that you
+wish to save the data too. NOTE: The directory must exist on the server.
+2- routes
+this is the router object witch contains the routes for kombatcha.
+the router object must be defined on the same file as the kombatcha
+server call. This is done by doing >>>
+ var routes = new Router();
+this gives the ability for the function to be able to interpret the
+routes from the router and understand the type of REST request that
+is being made from the function.
+3- fileName
+this is the name that you wish to call the file of which the JSON post
+data will be saved. NOTE: This is optional and if not supplied,
+will automatically give the file a name based on the current 24
+hour time. NOTE: Do not supply the extension. Just the name of the file.
+The extension is added automatically.
+COMPLETE EXAMPLE
+var kombucha =  require('kombucha');
+var routes = new Router();
+postJSONtoFILE('/test',routes,'oogabooga')
+OUTPUT
+Notifies you in the console of the fact that you saved the JSON
+post data to a file.
+
+getFileInfo(pathName, routes, fileName)
+NOTE: To use this function, make a GET request to /checkfile <<<<<<<<<<
+this function gets the stats (or file information) about a specific
+file or directory. It takes 3 parameters. pathName, routes and fileName.
+If no fileName is supplied, it will get the stats on the pathName
+(directory of folder) supplied.
+1-pathName
+the path of the file to get the stats(info) of
+2- routes
+this is the router object witch contains the routes for kombatcha.
+the router object must be defined on the same file as the kombatcha
+server call. This is done by doing >>>
+ var routes = new Router();
+this gives the ability for the function to be able to interpret the
+routes from the router and understand the type of REST request that
+is being made from the function.
+3- fileName
+the name of the file to get info of. NOTE: you must supply
+the extension of the file, IE: .txt, .js, .json, etc.
+Note, fileName is optional, and the function will default to the
+pathName if fileName is not provided by the user
+COMPLETE EXAMPLE
+var kombucha =  require('kombucha');
+var routes = new Router();
+postJSONtoFILE('/test',routes,'NewJerseyistheBEST.js')
+OUTPUT
+The console will display the stats of the file or directory and
+also notify the user if the file they are reading is in fact a file,
+or a directory.
