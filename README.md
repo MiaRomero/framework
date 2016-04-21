@@ -19,8 +19,6 @@ Router Methods
 <ul>
   <li><a href="#get-request">kombucha.get('/getRoute', "desired text")</a></li>
   <li><a href="#post-request">kombucha.post('/postRroute')</a></li>
-    <li> </li>
-  <li><a href="#custom-404">kombucha.router.custom404</a></li>
 </ul>
 Server Methods
 <ol>
@@ -88,23 +86,11 @@ Here is an example of an optional callback.
         response.end();
       });```
 
-<h4><a name="custom-404"></a>Setting up your own customer 404 response:</h4>
 
-<strong>kombucha.router.custom404(string)</strong>
-
-1.String: Any sting you use in here will then be set as your 404 response message.
-
-404 messages have a default already built in. But if you want to create custom 404 messages you can.
-
-```
-kombucha.custom404('some custom message here');
-```
-
-Every 404 you encounter will now respond with 'some custom message here'.
 
 <h4><a name="listen"></a>Starting up your server:</h4>
 
-<strong>kombucha.listen([port])</strong>
+<strong>kombucha.listen([port], [optional callback])</strong>
 
 1.Port(optional): You can set what port you want your server to be on. If you provide no arguments it will default to 3000.
 
