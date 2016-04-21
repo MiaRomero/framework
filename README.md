@@ -4,7 +4,7 @@
 
 <strong>The Kombucha Official (TKO) http Framework</strong>
 
-How to use the TKO framework
+How to use the Kombucha framework
 =====================
 Installation
 -------------
@@ -17,25 +17,30 @@ To then use kombucha, you must require in ('kombucha').
 
 Router Methods
 <ul>
-  <li><a href="#get-request">kombucha..get</a></li>
-  <li><a href="#post-request">kombucha.post</a></li>
+  <li><a href="#get-request">kombucha.get('/getRoute', "desired text")</a></li>
+  <li><a href="#post-request">kombucha.post('/postRroute')</a></li>
+    <li> </li>
   <li><a href="#custom-404">kombucha.router.custom404</a></li>
 </ul>
 Server Methods
-<ul>
-  <li><a href="#listen">kombucha.listen</a></li>
+<ol>
+  <li><a href="#listen">kombucha.listen( 3000 , ()=> connsole.log('server is up on 3000'))</a> (Use this if you just want to put in the number of the port yourself. "3000" is just an example. )</li>
+<li>
 
+var port = process.env.PORT;
   kombucha.listen(port, ()=>{
     port = process.env.PORT || 3000;
     console.log(port);
     console.log('server is up on the port ' + port);
   });
-</ul>
+  (Use this if you want to use an environment variable. If you don't have one, it will default to port 3000, which you can change if you want.)
+  </li>
+</0l>
 --------------------
 
 <h4><a name="get-request"></a>Setting up a route for a GET request:</h4>
 
-<strong>kombucha.router.get(pathname, [plain/text])</strong>
+<strong>kombucha.get(pathname, [plain/text])</strong>
 
 Sets up a basic route on your server that will return the plain/text you give it as a second argument
 
