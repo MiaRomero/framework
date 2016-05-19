@@ -3,9 +3,6 @@
   "version": "1.0.6",
   "description": "Our framework",
   "main": "index.js",
-  "bin": {
-    "framework": "framework.js"
-  },
   "directories": {
     "test": "test"
   },
