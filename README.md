@@ -4,7 +4,7 @@
 
 <strong>The Kombucha Official (TKO) http Framework</strong>
 
-How to use the TKO framework
+How to use the Kombucha framework
 =====================
 Installation
 -------------
@@ -17,25 +17,28 @@ To then use kombucha, you must require in ('kombucha').
 
 Router Methods
 <ul>
-  <li><a href="#get-request">kombucha..get</a></li>
-  <li><a href="#post-request">kombucha.post</a></li>
-  <li><a href="#custom-404">kombucha.router.custom404</a></li>
+  <li><a href="#get-request">kombucha.get('/getRoute', "desired text")</a></li>
+  <li><a href="#post-request">kombucha.post('/postRroute')</a></li>
 </ul>
 Server Methods
-<ul>
-  <li><a href="#listen">kombucha.listen</a></li>
+<ol>
+  <li><a href="#listen">kombucha.listen( 3000 , ()=> connsole.log('server is up on 3000'))</a> (Use this if you just want to put in the number of the port yourself. "3000" is just an example. )</li>
+<li>
 
+var port = process.env.PORT;
   kombucha.listen(port, ()=>{
     port = process.env.PORT || 3000;
     console.log(port);
     console.log('server is up on the port ' + port);
   });
-</ul>
+  (Use this if you want to use an environment variable. If you don't have one, it will default to port 3000, which you can change if you want.)
+  </li>
+</0l>
 --------------------
 
 <h4><a name="get-request"></a>Setting up a route for a GET request:</h4>
 
-<strong>kombucha.router.get(pathname, [plain/text])</strong>
+<strong>kombucha.get(pathname, [plain/text])</strong>
 
 Sets up a basic route on your server that will return the plain/text you give it as a second argument
 
@@ -83,23 +86,11 @@ Here is an example of an optional callback.
         response.end();
       });```
 
-<h4><a name="custom-404"></a>Setting up your own customer 404 response:</h4>
 
-<strong>kombucha.router.custom404(string)</strong>
-
-1.String: Any sting you use in here will then be set as your 404 response message.
-
-404 messages have a default already built in. But if you want to create custom 404 messages you can.
-
-```
-kombucha.custom404('some custom message here');
-```
-
-Every 404 you encounter will now respond with 'some custom message here'.
 
 <h4><a name="listen"></a>Starting up your server:</h4>
 
-<strong>kombucha.listen([port])</strong>
+<strong>kombucha.listen([port], [optional callback])</strong>
 
 1.Port(optional): You can set what port you want your server to be on. If you provide no arguments it will default to 3000.
 
