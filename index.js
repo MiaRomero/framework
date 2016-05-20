@@ -1,5 +1,7 @@
 
 
-module.exports = exports = require(__dirname + '/lib/server');
+const app = require(__dirname + '/lib/server');
 
-// console.log('index running');
+app.listen(3000, () => {
+  console.log('server');
+});
