@@ -1,4 +1,5 @@
 const kombucha = require(__dirname + '/../lib/server');
+
 kombucha.listen(3000, () => {
   console.log('server drunk on 3000');
 });
@@ -12,3 +13,5 @@ kombucha.get('/emptyBottle', (req, res) => {
   res.write('404 not found');
   res.end();
 });
+
+module.exports = exports = kombucha;
