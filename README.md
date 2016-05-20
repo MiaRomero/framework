@@ -2,7 +2,7 @@
 
 
 
-<strong>The Kombucha Official (TKO) http Framework</strong>
+<strong>The Kombucha Official http Framework</strong>
 
 How to use the Kombucha framework
 =====================
