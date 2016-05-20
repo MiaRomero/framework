@@ -4,8 +4,18 @@ chai.use(chaiHttp);
 const expect = chai.expect;
 const request = chai.request;
 require(__dirname + '/exampleServer');
+const Router = require(__dirname + '/../lib/router');
+const router = new Router();
 
-describe('the server', () => {
+describe('the kombucha router on exampleServer', () => {
+
+  it('should have all the REST functions', () => {
+    expect(router.routes).to.have.property('GET');
+    expect(router.routes).to.have.property('POST');
+    expect(router.routes).to.have.property('PUT');
+    expect(router.routes).to.have.property('PATCH');
+    expect(router.routes).to.have.property('DELETE');
+  });
 
   it('should accept GET requests to /soeffervescent', (done) => {
     request('http://localhost:3000')

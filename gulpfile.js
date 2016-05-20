@@ -14,3 +14,5 @@ gulp.task('test', ['eslint'], () => {
   gulp.src(['test/**/*.js'])
   .pipe(mocha({ reporter: 'nyan' }));
 });
+
+gulp.task('default', ['test']);
