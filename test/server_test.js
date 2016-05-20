@@ -3,15 +3,9 @@ const chaiHttp = require('chai-http');
 chai.use(chaiHttp);
 const expect = chai.expect;
 const request = chai.request;
-const server = require(__dirname + '/../lib/server');
+const server = require(__dirname + '/exampleServer');
 
 describe('the server', () => {
-
-  before(() => {
-    server.listen(3000, () => {
-      console.log('server up');
-    });
-  });
 
   it('should accept GET requests to /soeffervescent', (done) => {
     request('http://localhost:3000')
