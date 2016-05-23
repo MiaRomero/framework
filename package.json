@@ -1,8 +1,9 @@
 {
   "name": "kombucha",
-  "version": "1.0.3",
+  "version": "1.0.9",
   "description": "Our framework",
   "main": "index.js",
+  },
   "directories": {
     "test": "test"
   },
